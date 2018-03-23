@@ -1,10 +1,11 @@
 $( document ).ready(function() {
 
 
-var topics = ["cinderella", "snow white", "princess leia", "pocahontas", "mulan" ]
+let topics = ["cinderella", "snow white", "princess leia", "pocahontas", "mulan" ]
 
-function displayGifies {
-    var gify = $(this).attr("")
+function displayGifies () {
+    let gify = $(this).attr("");
+    const gifies = "http://api.giphy.com/v1/gifs/search?q=" + gify + "&api_key=dc6zaTOxFJmzC",
 }
 
 
