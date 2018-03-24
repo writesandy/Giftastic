@@ -4,7 +4,7 @@ $(document).ready(function() {
 let topics = ["cinderella", "snow+white", "princess+leia", "pocahontas", "mulan"];
 
 function displayGifies () {
-    let gify = $(this).attr("data-name");
+    var gify = $(this).attr("data-name");
     let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gify + "&api_key=dc6zaTOxFJmzC";
 
  
@@ -55,9 +55,9 @@ function showButtons() {
     $("#gify-buttons").append(a);
 }
 
-showButtons();
+
 }
 
-
+showButtons();
 
 });
