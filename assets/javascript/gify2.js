@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    let topics = ["cinderella", "snow white", "christmas", "bruce willis"];
+    let topics = ["disndy cinderella", "disney snow white", "merry christmas", "bruce willis"];
     let gify = $(this).attr("data-name");
     let limit = 10;
 ;
@@ -21,18 +21,24 @@ $(document).ready(function() {
           for (i=0; i < response.data.length; i++) {
                
             // div to hold gif
-            let gifyDiv = $("<div class ='gifData'>")
+            let gifyDiv = $("<div class ='gifData': class = 'col-md-2'>")
             let gifyURL = response.data[i].images.fixed_height_small_still.url;
             let gifyGoURL = response.data[i].images.fixed_height_small.url;
 
             let rating = response.data[i].rating;
-            pOne = $("<li class='col-md-4'>").text("Rating: " + rating);
+            pOne = $("<p>").text("Rating: " + rating);
             gifyDiv.append(pOne);
 
+            let dataStill = $("<img class='col-md-2': data-state='still' : class='gif'>");
+            dataStill.attr("src", gifyURL);
+            gifyDiv.append(dataStill);
 
-            let newImg = $("<img class='col-md-4'>");
-            newImg.attr("src", gifyURL);
-            gifyDiv.append(newImg);
+            let dataAnimate = $("<img class='col-md-2': data-state='animate' : class ='gif'>");
+            dataAnimate.attr("src", gifyURL);
+            gifyDiv.append(dataAnimate);
+            console.log(dataAnimate)
+
+
 
 
             // console.log(rating);
@@ -70,7 +76,10 @@ $(document).ready(function() {
         event.preventDefault();
         let gify = $("#gify-text").val().trim();
         topics.push(gify);
+        $('#gify-text').val('');
         showButtons();
+
+        
     })
     
     

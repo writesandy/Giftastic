@@ -1,7 +1,10 @@
-body {
-    background-color:
+
+
+img {
+    width: 125px;
+    height: 125px;
 }
 
-#gifies {
-    float: left;
+#gify-buttons {
+    margin: 0px;
 }
