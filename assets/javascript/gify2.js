@@ -4,6 +4,7 @@ $(document).ready(function() {
     let topics = ["cinderella", "snow white", "christmas", "bruce willis"];
     let gify = $(this).attr("data-name");
     let limit = 10;
+;
 
     
     function displayGif () {
@@ -20,19 +21,22 @@ $(document).ready(function() {
           for (i=0; i < response.data.length; i++) {
                
             // div to hold gif
-
+            let gifyDiv = $("<div class ='gifData'>")
             let gifyURL = response.data[i].images.fixed_height_small_still.url;
             let gifyGoURL = response.data[i].images.fixed_height_small.url;
 
-            let newImg = $("<img>");
-            newImg.attr("src", gifyURL);
-            $("#gifies").append(newImg).prepend();
-
             let rating = response.data[i].rating;
-            pOne = $("<p>").text("Rating: " + rating);
-            // $(".rating").append(pOne);
+            pOne = $("<li class='col-md-4'>").text("Rating: " + rating);
+            gifyDiv.append(pOne);
+
+
+            let newImg = $("<img class='col-md-4'>");
+            newImg.attr("src", gifyURL);
+            gifyDiv.append(newImg);
+
+
             // console.log(rating);
-            
+            $('#gifies').prepend(gifyDiv)
 
             // console.log(rating);
 
