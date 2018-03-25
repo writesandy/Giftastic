@@ -1,21 +1,27 @@
 $(document).ready(function() {
 
 
-let topics = ["cinderella", "snow+white", "princess+leia", "pocahontas", "mulan"];
-const gify = $(this).attr("data-name");
+let topics = ["cinderella", "snow white", "princess leia", "pocahontas", "mulan"];
+let gify = $(this).attr("data-name");
+let results = 10;
 
 function displayGifies () {
 
-    let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gify + "&api_key=dc6zaTOxFJmzC";
+    let queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=dc6zaTOxFJmzC";
 
- 
-
-    $.ajax ({
+     $.ajax ({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log('url: ' +response.data[0].images.original.url);
-        console.log('rating: ' +response.data[0].rating)
+        // console.log('url: ' +response.data[0].images.original.url);
+        // console.log('rating: ' +response.data[0].rating)
+
+        let results = response.data;
+
+        for (let i = 0; i < results.length; i++) {
+            let rating = results.rating;
+            console.log('text');
+        }
 
        
     let gifyDiv = $("<div class='gify'>");
@@ -23,15 +29,16 @@ function displayGifies () {
 
     $("#gifies").append(gifyDiv)
 
+
     let pOne = $("<p>").text("Rating: " +rating);
+    console.log(rating);
 
     // append rating
 
     gifyDiv.append(pOne);
 
     // Retrieving url for image
-
-    let imgURL = response.data[i].images.original.url;
+top
 
     // Element to image
 
@@ -49,7 +56,7 @@ function showButtons() {
     console.log(topics)
     for (var i = 0; i < topics.length; i++){
 
-    var a = $("<button>");
+    let a = $("<button>");
 
     a.addClass("gify-btn")
     a.attr("data-name", topics[i]);
@@ -57,8 +64,21 @@ function showButtons() {
     console.log(topics[i])
     $("#gify-buttons").append(a);
     }
+
 }
 
+
+// Function for when gify button is clicked
+
+$('#add-gify').on("click", function (event) {
+    event.preventDefault();
+    let gify = $("#gify-text").val().trim();
+    topics.push(gify);
+    showButtons();
+})
+
+
+$(document).on("click", ".gify-btn", displayGifies);
 
 
 
