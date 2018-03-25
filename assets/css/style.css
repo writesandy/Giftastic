@@ -1,0 +1,7 @@
+body {
+    background-color: tomato;
+}
+
+#rating {
+    display: inline;
+}

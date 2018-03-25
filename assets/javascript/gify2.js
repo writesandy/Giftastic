@@ -22,13 +22,18 @@ $(document).ready(function() {
             // div to hold gif
 
             let gifyURL = response.data[i].images.fixed_height_small_still.url;
+            let gifyGoURL = response.data[i].images.fixed_height_small.url;
+
             let newImg = $("<img>");
             newImg.attr("src", gifyURL);
-            $("#gifies").append(newImg);
-            // let rating = $("<p>").text("Rating:" +results[i].rating);
-            // $(".rating").data(rating);
+            $("#gifies").append(newImg).prepend();
 
-            let image = $()
+            let rating = response.data[i].rating;
+            pOne = $("<p>").text("Rating: " + rating);
+            // $(".rating").append(pOne);
+            // console.log(rating);
+            
+
             // console.log(rating);
 
 
