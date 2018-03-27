@@ -24,49 +24,53 @@ $(document).ready(function() {
 
             //info for rating in gifyDiv
             let rating = response.data[i].rating;
-            pOne = $("<p class =col-md-2>").text("Rating: " + rating);
+            pOne = $("<p>").text("Rating: " + rating);
             //div for gify images
 
             let gifyDiv = $('<img>');
             
-            //attributes for gify div
+            // attributes for gify div
             gifyDiv.attr('src', response.data[i].images.fixed_height_small_still.url);
             gifyDiv.attr('data-still', response.data[i].images.fixed_height_small_still.url);
             gifyDiv.attr('data-animate', response.data[i].images.fixed_height_small.url);
             gifyDiv.attr('data-state', 'still');
             gifyDiv.addClass('changeAnime');
-            gifyDiv.addClass('col-md-2');
 
- 
+
+            let gifyContainer = $("<div>");
+            gifyContainer.addClass('col-md-2');
+
             //prepend rating & gif images to page
-            // $('#gifies').prepend(pOne);
-            $('#gifies').prepend(gifyDiv);
+            gifyContainer.prepend(pOne);
+            gifyContainer.prepend(gifyDiv);
+
+            $("#gifies").prepend(gifyContainer);
 
 
 
             }
 
-            $(".changeAnime").on("click"), function() {
 
-                let state = $(this).attr("data-state");
-                console.log(this);
-    
-                if (state === "still") {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                } else {
-                    $(this).attr("src", $(this).data("data-still"));
-                    $(this).attr("data-state", "still");
-                }
-    
-            } 
 
         });
     
         }
 
  
+        $("#gifies").on("click", ".changeAnime" , function() {
 
+            let state = $(this).attr("data-state");
+            console.log(this);
+
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).data("data-still"));
+                $(this).attr("data-state", "still");
+            }
+
+        })
 
 
     //Dynamically create buttons -- create function to build button
