@@ -24,8 +24,7 @@ $(document).ready(function() {
 
             //info for rating in gifyDiv
             let rating = response.data[i].rating;
-            pOne = $("<p>").text("Rating: " + rating);
-
+            pOne = $("<p class =col-md-2>").text("Rating: " + rating);
             //div for gify images
 
             let gifyDiv = $('<img>');
@@ -36,10 +35,13 @@ $(document).ready(function() {
             gifyDiv.attr('data-animate', response.data[i].images.fixed_height_small.url);
             gifyDiv.attr('data-state', 'still');
             gifyDiv.addClass('changeAnime');
+            gifyDiv.addClass('col-md-2');
+
  
             //prepend rating & gif images to page
-            $('#gifies').append(pOne);
-            $('#gifies').append(gifyDiv);
+            // $('#gifies').prepend(pOne);
+            $('#gifies').prepend(gifyDiv);
+
 
 
             }

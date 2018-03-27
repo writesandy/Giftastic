@@ -12,23 +12,36 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<main role="main" class="container">
+    <main role="main" class="container">
         <div class="jumbotron">
-          <h1>Disney Princess Gif Search</h1>
-          <p class="lead">Enter the name of your favorite Disney Princess, or something else. <br>Once the button pops up - click it for 10 new .gifs of your choice!</p>
+            <h1>Disney Princess Gif Search</h1>
+            <p class="lead">Enter the name of your favorite Disney Princess, or something else. <br>Once the button pops up - click it for 10 new .gifs of your choice!</p>
         </div>
       </main>
 </head>
 <body class = "container">
-                    <div id = "gify-buttons"></div>
-                <form id = "gif-form">
-                        <label for = "gif-input">Add a Topic:</label>
-                        <input type = "text" id = "gify-text">
-                        <!-- <br> -->
-                        <input id ="add-gify" type = "submit" value="Add a Giphy">
-                    </form>
-                    <div id = "gifies"></div>
+        <div class = "row">
+            <div id = "gify-buttons"></div>
+        </div>
 
+
+        <div class = "row">
+
+            <form id = "gif-form">
+                <label for = "gif-input">Add a Topic:</label>
+                <input type = "text" id = "gify-text">
+                <!-- <br> -->
+                <input id ="add-gify" type = "submit" value="Add a Giphy">
+            </form>
+        </div>
+    <div class = "row">
+            <div class = "row"></div>
+<div id = "ratings"></div>
+    </div>
+<div class = "row">
+        <div class = "row"></div>
+                    <div id = "gifies"></div>
+                </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

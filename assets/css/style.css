@@ -1,13 +1,10 @@
 
 body {
     
-    background-image: url(./assets/images/princess.jpg)
+    background-color: #ffff;
+    background-image: url("../images/princess.jpg")
 }
 
-img {
-    width: 125px;
-    height: 125px;
-}
 
 #gify-buttons {
     margin: 0px;
@@ -15,6 +12,12 @@ img {
     text-align: center;
 }
 
-#gifies {
-    float: left;
+img {
+
+    height: 125px;
+    padding-top: 20px;
+}
+
+#ratings {
+    padding: 20px;
 }
