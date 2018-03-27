@@ -1,4 +1,8 @@
 
+body {
+    
+    background-image: url(./assets/images/princess.jpg)
+}
 
 img {
     width: 125px;
@@ -7,4 +11,10 @@ img {
 
 #gify-buttons {
     margin: 0px;
+    padding: 15px;
+    text-align: center;
+}
+
+#gifies {
+    float: left;
 }
